@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f3f4f6;
+    transition: 0.3s ease;
+}
+.logo {
+    font-size: 28px;
+}
+.dark {
+    background-color: #111827;
+    color: white;
+}
+
+.dark .navbar {
+    background-color: #1f2937;
+}
+
+.dark .nav-links a {
+    color: white;
+}
+
+.dark .modal {
+    background-color: #1f2937;
+    color: white;
+}
+
+.navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 60px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    color: black;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+button {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-btn {
+    font-size: 28px;
+    display: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 24px;
+    margin: auto;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.faq {
+    max-width: 800px;
+    padding: 40px 20px;
+    margin: auto;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.question {
+    padding: 20px;
+    background-color: #2563eb;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.answer {
+    padding: 20px;
+    display: none;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal {
+    background-color: white;
+    width: 350px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+.modal p {
+    margin-bottom: 20px;
+}
+
+@media (max-width:768px) {
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: white;
+        border-radius: 12px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+.nav-links.show {
+        display: flex;
+}
+.dark .nav-links {
+    background-color: #1f2937;
+    color: white;
+}
+.dark .faq-item {
+    background-color: #1f2937;
+}
+button, .faq-item,
+.nav-links, .modal {
+    transition: 0.3s ease;
+}
+button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+.hero {
+    animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.modal {
+    animation: popup 0.4s ease;
+}
+@keyframes popup {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
